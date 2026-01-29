@@ -1,6 +1,6 @@
 # Qumulo Audit Monitor
 
-A simple syslog monitoring solution for Qumulo storage systems using Alloy, Loki, and Grafana.
+A simple audit log monitoring solution for Qumulo storage systems using Alloy, Loki, and Grafana.
 
 This is to be used if one would like a simple quick way to monitor stats and query Qumulo audit logs, but does not currently have the infrastructure set up to do so. 
 It is not intended on being treated as a fully supported Qumulo solution. Use this freely, but please self support. Suggestions are always welcome, but not necessarily going to be added.
