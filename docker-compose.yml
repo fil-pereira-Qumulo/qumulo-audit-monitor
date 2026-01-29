@@ -1,0 +1,38 @@
+version: "3"
+services:
+  loki:
+    image: grafana/loki:latest
+    hostname: loki
+    container_name: Loki
+    ports:
+      - "3100:3100"
+    volumes:
+      - ./loki/configs/loki-config.yaml:/etc/loki/local-config.yaml
+      - ./loki/data:/loki
+    command: -config.file=/etc/loki/local-config.yaml
+    restart: unless-stopped
+
+  alloy:
+    image: grafana/alloy:latest
+    hostname: alloy
+    container_name: Alloy
+    ports:
+      - "514:514"
+      - "12345:12345"
+    volumes:
+      - ./alloy/configs/alloy-config.alloy:/etc/alloy/config.alloy
+    command: run --server.http.listen-addr=0.0.0.0:12345 /etc/alloy/config.alloy
+    restart: unless-stopped
+
+  Grafana:
+    image: grafana/grafana:12.1.6
+    hostname: grafana
+    container_name: Grafana
+    ports:
+      - 3000:3000
+    volumes:
+      - ./grafana/data:/var/lib/grafana:rw
+      - ./grafana/configs/provisioning/:/etc/grafana/provisioning/:rw
+      - ./grafana/configs/grafana.ini:/etc/grafana/grafana.ini:rw
+    restart: unless-stopped
+
