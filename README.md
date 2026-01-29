@@ -96,14 +96,15 @@ qumulo-audit-monitor_latest/
    ```
    All services should show as "Up"
 
-5. **Access Grafana:**
+5. **Configure Qumulo to send syslogs:**
+   - Point Qumulo audit logs to your host IP on TCP port 514
+   - In the Qumulo WebUI head to "Cluster" -> "Audit"
+   - Add in the IP or hostname of the machine running this repo and save you changes
+   - The status should show as "CONNECTED"
+
+6. **Access Grafana:**
    - URL: http://localhost:3000
    - Default credentials: admin / admin (change on first login)
-
-6. **Configure Qumulo to send syslogs:**
-   - Point Qumulo audit logs to your host IP on TCP port 514
-   - Ensure logs are in CSV format with the following fields:
-     `client_ip,"login_id",protocol,operation,operation_result,file_id,"primary_path","secondary_path"`
 
 ### Verification
 
@@ -130,6 +131,7 @@ Interactive log viewer with:
 - Filter by qumulo node, protocol, operation, result
 - Filter by client IP, user, file path (regex support)
 - Expandable log details with structured metadata
+<img width="1810" height="1181" alt="Image" src="https://github.com/user-attachments/assets/0c13d242-db92-4b30-a95c-cd711e68ed80" />
 
 ### Qumulo Audit Stats Dashboard
 Statistical visualizations including:
@@ -140,6 +142,7 @@ Statistical visualizations including:
 - Top 10 most active client IPs
 - Top 10 most active users
 - Total log entry counts
+<img width="1819" height="1180" alt="Image" src="https://github.com/user-attachments/assets/7110bb68-911c-441c-9446-9b958ac538d6" />
 
 ## 🔧 Configuration
 
