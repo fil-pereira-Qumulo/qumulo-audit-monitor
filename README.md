@@ -70,30 +70,25 @@ qumulo-audit-monitor_latest/
 
 1. **Clone the project:**
    ```bash
-   cd qumulo-audit-monitor_latest/
+   git clone https://github.com/fil-pereira-Qumulo/qumulo-audit-monitor.git
    ```
 
-2. **Create data directories:**
-   ```bash
-   mkdir -p loki/data grafana/data
-   ```
-
-3. **Start the stack:**
+2. **Start the stack:**
    ```bash
    docker compose up -d
    ```
 
-4. **Verify services are running:**
+3. **Verify services are running:**
    ```bash
    docker compose ps
    ```
    All services should show as "Up"
 
-5. **Access Grafana:**
+4. **Access Grafana:**
    - URL: http://localhost:3000
    - Default credentials: admin / admin (change on first login)
 
-6. **Configure Qumulo to send syslogs:**
+5. **Configure Qumulo to send syslogs:**
    - Point Qumulo audit logs to your host IP on TCP port 514
    - Ensure logs are in CSV format with the following fields:
      `client_ip,"login_id",protocol,operation,operation_result,file_id,"primary_path","secondary_path"`
