@@ -63,7 +63,7 @@ qumulo-audit-monitor_latest/
 ### Prerequisites
 
 - A machine or VM with 4 CPU cores and 16GB of RAM (Loki likes memory)
-- At least 200GB free disk space for log storage *this is an estimate* mileage varies based on how busy a cluster is
+- At least 200GB free disk space for log storage, *this is an estimate*, mileage varies based on how busy a cluster is
 - Docker, Docker Compose, and GIT installed
 - Network access from Qumulo systems to the host on TCP port 514
 
