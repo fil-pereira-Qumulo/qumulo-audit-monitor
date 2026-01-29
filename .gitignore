@@ -1,5 +1,25 @@
-# Object file
-*.o
+# Data directories - exclude persistent storage
+loki/data/
+grafana/data/
 
-# Ada Library Information
-*.ali
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Docker
+.env
+docker-compose.override.yml
+
+# Temporary files
+*.tmp
+*.bak
